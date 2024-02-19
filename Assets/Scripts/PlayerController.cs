@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 10f;
-
-    public float jumpHeight = 10;
+    public float speed = 5f;
+    public float jumpHeight = 5;
     public float gravity = 9.81f;
 
-    public float airControl = 10f;
+    public float airControl = 5f;
 
     CharacterController controller;
     Vector3 input, moveDirection;
@@ -25,10 +24,9 @@ public class PlayerController : MonoBehaviour
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-
         input = (transform.right * moveHorizontal + transform.forward * moveVertical).normalized;
-
         input *= speed;
+        
 
         if (controller.isGrounded)
         {
