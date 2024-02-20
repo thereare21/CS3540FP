@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Medieval_Material
+  m_Name: SimpleApocalypse
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -45,7 +45,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: cf19d52271177d0428e56c9b5bca279a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4ff1af79d71131d4baa930635e93b073, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -68,9 +68,9 @@ Material:
     - _DstBlend: 0
     - _EmissionScaleUI: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0
+    - _Glossiness: 0.102
     - _GlossyReflections: 1
-    - _Metallic: 0
+    - _Metallic: 0.452
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
