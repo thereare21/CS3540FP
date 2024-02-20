@@ -22,7 +22,7 @@ public class TurretBehavior : MonoBehaviour
     {
         if (playerIsInRange)
         {
-            transform.LookAt(player.transform);
+            //transform.LookAt(player.transform);
             //transform.rotation = Vector3.Lerp(transform.rotation, transform.LookAt(player.transform); //can't be done :(
 
             //Vector3 forward = transform.forward;
@@ -33,6 +33,12 @@ public class TurretBehavior : MonoBehaviour
             //Quaternion lookRotation = Quaternion.LookRotation(relativePos);
 
             //transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed);
+
+            Vector3 targetDirection = player.transform.position - transform.position;
+
+            Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, turnSpeed * Time.deltaTime, 0.0f);
+
+            transform.rotation = Quaternion.LookRotation(newDirection);
 
         }
     }
