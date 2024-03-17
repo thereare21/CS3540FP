@@ -6,9 +6,10 @@ public class TurretBehavior : MonoBehaviour
 {
     public GameObject player;
     public float turnSpeed = 200f;
-
+    public float range = 7f;
 
     bool playerIsInRange = false;
+    bool turretEnabled = true;
 
 
     // Start is called before the first frame update
@@ -20,6 +21,15 @@ public class TurretBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Vector3.Distance(transform.position, player.transform.position) < range)
+        {
+            playerIsInRange = true;
+        }
+        else
+        {
+            playerIsInRange = false;
+
+        }
         if (playerIsInRange)
         {
             //transform.LookAt(player.transform);
@@ -34,11 +44,17 @@ public class TurretBehavior : MonoBehaviour
 
             //transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed);
 
-            Vector3 targetDirection = player.transform.position - transform.position;
+            if (turretEnabled)
+            {
+                Vector3 targetDirection = player.transform.position - transform.position;
 
-            Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, turnSpeed * Time.deltaTime, 0.0f);
+                Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, turnSpeed * Time.deltaTime, 0.0f);
 
-            transform.rotation = Quaternion.LookRotation(newDirection);
+                newDirection.y = 0;
+
+                transform.rotation = Quaternion.LookRotation(newDirection);
+            }
+            
 
         }
     }
@@ -47,7 +63,7 @@ public class TurretBehavior : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("player detected");
+             Debug.Log("player detected");
         }
 
         playerIsInRange = true;
@@ -65,5 +81,16 @@ public class TurretBehavior : MonoBehaviour
         }
 
         playerIsInRange = false;
+    }
+
+    public void DisableThis()
+    {
+        if (turretEnabled)
+        {
+            GameObject gun = transform.GetChild(0).gameObject;
+            gun.transform.Rotate(-30, 0, 0);
+            turretEnabled = false;
+        }
+        
     }
 }
