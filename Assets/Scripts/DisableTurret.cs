@@ -5,6 +5,9 @@ using UnityEngine;
 public class DisableTurret : MonoBehaviour
 {
     public float disableDistance = 3f;
+    public AudioClip firingSFX;
+    public GameObject turret;
+
     bool firing = false;
     // Start is called before the first frame update
     void Start()
@@ -18,6 +21,10 @@ public class DisableTurret : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             firing = true;
+            TurretBehavior turretBehavior = turret.GetComponent<TurretBehavior>();
+            if (turretBehavior != null) {
+                turretBehavior.playFiringSFX(firingSFX);
+            }
         }
     }
 

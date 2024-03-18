@@ -102,7 +102,7 @@ MonoBehaviour:
   player: {fileID: 0}
   turnSpeed: 2
   range: 10
-  disableSFX: {fileID: 8300000, guid: fe6da08278abfbf4286384cf05022345, type: 3}
+  disableSFX: {fileID: 8300000, guid: f28c21ff5879f415fbcf08c9399b3979, type: 3}
 --- !u!114 &814446378829676929
 MonoBehaviour:
   m_ObjectHideFlags: 0

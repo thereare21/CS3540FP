@@ -95,4 +95,8 @@ public class TurretBehavior : MonoBehaviour
         }
         
     }
+
+    public void playFiringSFX(AudioClip sfx) {
+            AudioSource.PlayClipAtPoint(sfx, Camera.main.transform.position);
+    }
 }
