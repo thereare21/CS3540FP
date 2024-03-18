@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
+    public float normalSpeed = 5f;
+    public float speedUpSpeed = 8f;
     public float jumpHeight = 5;
     public float gravity = 9.81f;
     public float airControl = 5f;
@@ -20,6 +22,10 @@ public class PlayerController : MonoBehaviour
     public float crouchCameraHeight = 0.4f;
 
     bool isCrouching = false;
+    bool isSpeeding = false;
+
+    float speedTimeTotal = 2f;
+    float speedTimer = 0f;
 
     CharacterController controller;
     Vector3 input, moveDirection;
@@ -35,8 +41,32 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       HandleMovement();
+        HandleSpeed();
+        HandleMovement();
        HandleCrouch();
+        
+        
+    }
+
+    void HandleSpeed()
+    {
+        if (isSpeeding)
+        {
+            speed = speedUpSpeed;
+        }
+        else
+        {
+            speed = normalSpeed;
+        }
+
+        speedTimer -= Time.deltaTime;
+        if (speedTimer < 0f)
+        {
+            isSpeeding = false;
+            GetComponentInChildren<ParticleSystem>().GetComponent<Renderer>().enabled = false;
+
+        }
+
     }
 
     void HandleMovement() {
@@ -107,5 +137,13 @@ public class PlayerController : MonoBehaviour
             // go to next sfx (or back to the beginning)
             lastFootstepIndex = (lastFootstepIndex + 1) % footStepSFX.Length;
         }
+    }
+
+    public void SpeedBoost()
+    {
+
+        isSpeeding = true;
+        speedTimer = speedTimeTotal;
+        GetComponentInChildren<ParticleSystem>().GetComponent<Renderer>().enabled = true;
     }
 }
