@@ -7,6 +7,7 @@ public class TurretBehavior : MonoBehaviour
     public GameObject player;
     public float turnSpeed = 200f;
     public float range = 7f;
+    public AudioClip disableSFX;
 
     bool playerIsInRange = false;
     bool turretEnabled = true;
@@ -90,6 +91,7 @@ public class TurretBehavior : MonoBehaviour
             GameObject gun = transform.GetChild(0).gameObject;
             gun.transform.Rotate(-30, 0, 0);
             turretEnabled = false;
+            AudioSource.PlayClipAtPoint(disableSFX, Camera.main.transform.position);
         }
         
     }
