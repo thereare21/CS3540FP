@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3208,6 +3208,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableDistance: 3
+  firingSFX: {fileID: 8300000, guid: 5377e6a091a2d477cb22d8bce22c73cc, type: 3}
+  turret: {fileID: 3864434632688398175, guid: e770950ac8ff9462ca2e91812db83f67, type: 3}
 --- !u!4 &875307902 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 424824, guid: d24b470dbdfddb642b83fb47c028a310, type: 3}
@@ -4622,6 +4624,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1643767363356163126, guid: fbfa5206f9ec840b8a7ede145a0b82bf, type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2566679356014980526, guid: fbfa5206f9ec840b8a7ede145a0b82bf, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5
@@ -4666,6 +4672,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6040240200505146883, guid: fbfa5206f9ec840b8a7ede145a0b82bf, type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6714505782563944496, guid: fbfa5206f9ec840b8a7ede145a0b82bf, type: 3}
       propertyPath: speed
       value: 2
@@ -4682,6 +4692,26 @@ PrefabInstance:
       propertyPath: jumpHeight
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6714505782563944496, guid: fbfa5206f9ec840b8a7ede145a0b82bf, type: 3}
+      propertyPath: footStepSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: c7f2d9ca209f44d1da471b2513afd235, type: 3}
+    - target: {fileID: 6714505782563944496, guid: fbfa5206f9ec840b8a7ede145a0b82bf, type: 3}
+      propertyPath: footstepDelay
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6714505782563944496, guid: fbfa5206f9ec840b8a7ede145a0b82bf, type: 3}
+      propertyPath: footStepSFX.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6714505782563944496, guid: fbfa5206f9ec840b8a7ede145a0b82bf, type: 3}
+      propertyPath: footStepSFX.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4bad8ab22a40e46a78ee833a9c823f28, type: 3}
+    - target: {fileID: 6714505782563944496, guid: fbfa5206f9ec840b8a7ede145a0b82bf, type: 3}
+      propertyPath: footStepSFX.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2f2934a5aaa8b488091f41bde00b3dd7, type: 3}
     - target: {fileID: 6779097620234355860, guid: fbfa5206f9ec840b8a7ede145a0b82bf, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.1
