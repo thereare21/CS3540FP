@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
 
     void HandleCrouch() {
         if (Input.GetKey(KeyCode.LeftShift)) {
-            if (!isCrouching) {
+            if (!isCrouching && controller.isGrounded) {
                 Crouch();
             }
         }
