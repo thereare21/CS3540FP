@@ -126,6 +126,7 @@ MonoBehaviour:
   turnSpeed: 2
   range: 10
   disableSFX: {fileID: 8300000, guid: f28c21ff5879f415fbcf08c9399b3979, type: 3}
+  shootSFX: {fileID: 8300000, guid: 3d8f93c7996ebdc4994fa76f0e32c950, type: 3}
   disabledTurret: {fileID: 3406409431350050175, guid: 65993762838388141ac1d48e77c436e7, type: 3}
   disableParticles: {fileID: 7366811081432578922, guid: 8c3c4acaa7d760c43a22962e0b9e196a, type: 3}
 --- !u!1 &1706099223687373246

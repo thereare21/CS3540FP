@@ -9,6 +9,7 @@ public class TurretBehavior : MonoBehaviour
     public float turnSpeed = 2f;
     public float range = 7f;
     public AudioClip disableSFX;
+    public AudioClip shootSFX;
     public GameObject disabledTurret;
     public GameObject disableParticles;
     bool playerIsInRange = false;
@@ -48,6 +49,7 @@ public class TurretBehavior : MonoBehaviour
         }
         if (lockedTime >= 2)
         {
+            AudioSource.PlayClipAtPoint(shootSFX, Camera.main.transform.position, 0.5f);
             GameObject projectile = Instantiate(currentProjectile,
                 turretTip.transform.position + transform.forward, transform.rotation) as GameObject;
 
