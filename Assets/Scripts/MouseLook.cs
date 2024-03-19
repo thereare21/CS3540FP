@@ -21,6 +21,7 @@ public class MouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!LevelManager.isGameOver) {
         float moveX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float moveY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
@@ -31,5 +32,6 @@ public class MouseLook : MonoBehaviour
         pitch -= moveY;
         pitch = Mathf.Clamp(pitch, -90f, 90f);
         transform.localRotation = Quaternion.Euler(pitch, 0, 0);
+        }   
     }
 }
