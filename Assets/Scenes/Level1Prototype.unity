@@ -3360,8 +3360,9 @@ GameObject:
   - component: {fileID: 1064608863}
   - component: {fileID: 1064608862}
   - component: {fileID: 1064608861}
+  - component: {fileID: 1064608865}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: EndGoal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3382,7 +3383,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -3408,7 +3409,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: dd6fcdbf5de6cfd468b3aa51b5a99996, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3453,6 +3454,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1064608865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064608860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12eb9d4d22cfee84c94fc41350b93573, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1112043622 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1699043167671751489, guid: fbad02830b7804f258b98f41cc787b5b, type: 3}
@@ -3991,7 +4004,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: c7f2d9ca209f44d1da471b2513afd235, type: 3}
     - target: {fileID: 6714505782563944496, guid: fbfa5206f9ec840b8a7ede145a0b82bf, type: 3}
       propertyPath: normalSpeed
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6714505782563944496, guid: fbfa5206f9ec840b8a7ede145a0b82bf, type: 3}
       propertyPath: speedUpSpeed

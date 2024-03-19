@@ -25,6 +25,6 @@ public class PlayerHealth : MonoBehaviour
     }
 
     void PlayerDies() {
-        transform.Rotate(-90, 0, 0, Space.Self);
+        FindObjectOfType<LevelManager>().LevelLost();
     }
 }

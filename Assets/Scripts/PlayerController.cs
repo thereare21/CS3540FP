@@ -41,10 +41,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HandleSpeed();
-        HandleMovement();
-       HandleCrouch();
-        
+        if (!LevelManager.isGameOver) {
+            HandleSpeed();
+            HandleMovement();
+            HandleCrouch();
+        }  
         
     }
 
@@ -88,7 +89,9 @@ public class PlayerController : MonoBehaviour
                 moveDirection.y = 0.0f;
             }
 
-            PlayFootstepSFX();
+            if (!isCrouching) { 
+                PlayFootstepSFX();
+            }
         }
         else
         {
