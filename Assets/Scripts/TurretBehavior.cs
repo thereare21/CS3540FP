@@ -5,13 +5,16 @@ using UnityEngine;
 public class TurretBehavior : MonoBehaviour
 {
     public GameObject player;
+    public GameObject currentProjectile;
     public float turnSpeed = 2f;
     public float range = 7f;
     public AudioClip disableSFX;
     public GameObject disabledTurret;
+    public GameObject disableParticles;
     bool playerIsInRange = false;
 
     GameObject turretTip;
+    float lockedTime = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +46,17 @@ public class TurretBehavior : MonoBehaviour
                 transform.rotation = Quaternion.LookRotation(newDirection);
 
         }
+        if (lockedTime >= 2)
+        {
+            GameObject projectile = Instantiate(currentProjectile,
+                turretTip.transform.position + transform.forward, transform.rotation) as GameObject;
+
+            Rigidbody rb = projectile.GetComponent<Rigidbody>();
+
+            rb.AddForce(transform.forward * 50, ForceMode.VelocityChange);
+
+            lockedTime = 0;
+        }
     }
 
 
@@ -58,6 +72,13 @@ public class TurretBehavior : MonoBehaviour
             if (hit.collider.CompareTag("Player"))
             {
                 playerIsInRange = true;
+                if (Physics.Raycast(turretTip.transform.position, transform.forward, out hit, range))
+                {
+                    if (hit.collider.CompareTag("Player"))
+                    {
+                        lockedTime += Time.deltaTime;
+                    }
+                }
             }
 
             else
@@ -75,6 +96,9 @@ public class TurretBehavior : MonoBehaviour
     {
 
         Instantiate(disabledTurret, transform.position, transform.rotation);
+        transform.rotation = Quaternion.Euler(-90, 0, 0);
+        Instantiate(disableParticles, transform.position, transform.rotation);
+        
         AudioSource.PlayClipAtPoint(disableSFX, Camera.main.transform.position);
         Destroy(gameObject);
 

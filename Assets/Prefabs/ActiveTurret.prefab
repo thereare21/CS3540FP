@@ -107,7 +107,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.75, y: 0.6397398, z: 0.75}
+  m_Size: {x: 0.8, y: 0.6397398, z: 0.8}
   m_Center: {x: 0.0000076293945, y: 0.3198699, z: 0}
 --- !u!114 &3668676095983201660
 MonoBehaviour:
@@ -122,10 +122,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  currentProjectile: {fileID: 2175832137874964721, guid: da2ddf8645568414cbd048ae9ba9b3d2, type: 3}
   turnSpeed: 2
   range: 10
   disableSFX: {fileID: 8300000, guid: f28c21ff5879f415fbcf08c9399b3979, type: 3}
   disabledTurret: {fileID: 3406409431350050175, guid: 65993762838388141ac1d48e77c436e7, type: 3}
+  disableParticles: {fileID: 7366811081432578922, guid: 8c3c4acaa7d760c43a22962e0b9e196a, type: 3}
 --- !u!1 &1706099223687373246
 GameObject:
   m_ObjectHideFlags: 0
