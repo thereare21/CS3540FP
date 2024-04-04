@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float normalSpeed = 5f;
     public float speedUpSpeed = 8f;
     public float jumpHeight = 5;
+    public float superJumpHeight = 5;
     public float gravity = 9.81f;
     public float airControl = 5f;
     public AudioClip[] footStepSFX; // array to allow variability in sfx
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
     public float crouchCameraHeight = 0.4f;
 
     bool isCrouching = false;
+    bool shiftJump = false;
     bool isSpeeding = false;
 
     float speedTimeTotal = 2f;
@@ -75,6 +77,7 @@ public class PlayerController : MonoBehaviour
         float moveVertical = Input.GetAxis("Vertical");
         input = (transform.right * moveHorizontal + transform.forward * moveVertical).normalized;
         input *= speed;
+        shiftJump = Input.GetKey(KeyCode.LeftShift); // check if crouch is pressed
 
         if (controller.isGrounded)
         {
@@ -82,7 +85,13 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetButton("Jump"))
             {
-                moveDirection.y = Mathf.Sqrt(2 * jumpHeight * gravity);
+                if (shiftJump) {
+                    moveDirection.y = Mathf.Sqrt(2 * superJumpHeight * gravity);
+
+                }
+                else {
+                    moveDirection.y = Mathf.Sqrt(2 * jumpHeight * gravity);
+                }
             }
             else
             {
@@ -148,5 +157,15 @@ public class PlayerController : MonoBehaviour
         isSpeeding = true;
         speedTimer = speedTimeTotal;
         GetComponentInChildren<ParticleSystem>().GetComponent<Renderer>().enabled = true;
+    }
+
+    // when crouching and then jumping, jump 2x as high
+    public void HandleSuperJump() {
+        if (isCrouching && Input.GetKey(KeyCode.Space)) {
+            moveDirection.y = Mathf.Sqrt(4 * jumpHeight * gravity);
+        }
+        else {
+            moveDirection.y = 0.0f;
+        }
     }
 }
