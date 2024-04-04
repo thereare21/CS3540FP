@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float gravity = 9.81f;
     public float airControl = 5f;
     public AudioClip[] footStepSFX; // array to allow variability in sfx
+    public AudioClip superJumpSFX;
     public float footstepDelay = 0.5f; 
     
     // height variables for crouching and standing
@@ -87,6 +88,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (shiftJump) {
                     moveDirection.y = Mathf.Sqrt(2 * superJumpHeight * gravity);
+                    AudioSource.PlayClipAtPoint(superJumpSFX, transform.position, 0.1f); 
 
                 }
                 else {
