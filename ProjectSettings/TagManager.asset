@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Turret
   - TurretTip
+  - Mineral
+  - ScoreManager
+  - Canvas
   - Projectile
   layers:
   - Default
