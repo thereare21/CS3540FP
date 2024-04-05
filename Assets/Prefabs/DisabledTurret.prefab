@@ -178,9 +178,10 @@ GameObject:
   - component: {fileID: 7489716376924785624}
   - component: {fileID: 4849489745626017328}
   - component: {fileID: -2562748126500943765}
+  - component: {fileID: 4265291392828698506}
   m_Layer: 0
   m_Name: DisabledTurret
-  m_TagString: Untagged
+  m_TagString: Disabled
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -273,6 +274,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.8, y: 0.6397398, z: 0.8}
   m_Center: {x: 0, y: 0.3198699, z: 0}
+--- !u!114 &4265291392828698506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3406409431350050175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 444d9ce99dac7a44c8cef9712a39771c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enabledTurret: {fileID: 1555497240681341360, guid: 24edba7168b9417408b5f55dd48f8e7d, type: 3}
 --- !u!1 &4389741776690871149
 GameObject:
   m_ObjectHideFlags: 0

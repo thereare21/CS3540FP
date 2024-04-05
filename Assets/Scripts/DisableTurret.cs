@@ -7,6 +7,7 @@ public class DisableTurret : MonoBehaviour
     public float disableDistance = 3f;
     public AudioClip firingSFX;
     public GameObject turret;
+    public GameObject distract;
 
     bool firing = false;
     // Start is called before the first frame update
@@ -25,6 +26,15 @@ public class DisableTurret : MonoBehaviour
             if (turretBehavior != null) {
                 turretBehavior.playFiringSFX(firingSFX);
             }
+        }
+        if (Input.GetButtonDown("Fire2"))
+        {
+            GameObject projectile = Instantiate(distract,
+                transform.position + transform.forward, transform.rotation) as GameObject;
+
+            Rigidbody rb = projectile.GetComponent<Rigidbody>();
+
+            rb.AddForce(transform.forward * 10, ForceMode.VelocityChange);
         }
     }
 

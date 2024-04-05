@@ -7,6 +7,9 @@ TagManager:
   - Turret
   - TurretTip
   - Projectile
+  - Disabled
+  - Waypoint
+  - NPC
   layers:
   - Default
   - TransparentFX
