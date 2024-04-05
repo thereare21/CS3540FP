@@ -4967,7 +4967,7 @@ Transform:
   m_GameObject: {fileID: 8860124313376486977}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.49, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5090,11 +5090,13 @@ MonoBehaviour:
   normalSpeed: 5
   speedUpSpeed: 8
   jumpHeight: 1
+  superJumpHeight: 5
   gravity: 9.81
   airControl: 1
   footStepSFX:
   - {fileID: 8300000, guid: 4bad8ab22a40e46a78ee833a9c823f28, type: 3}
   - {fileID: 8300000, guid: 2f2934a5aaa8b488091f41bde00b3dd7, type: 3}
+  superJumpSFX: {fileID: 0}
   footstepDelay: 0.75
   standHeight: 2
   crouchHeight: 1

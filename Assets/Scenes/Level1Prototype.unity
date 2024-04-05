@@ -1572,7 +1572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameText: {fileID: 186932130}
-  nextLevel: Level1Prototype
+  nextLevel: Level2Prototype
   currentLevel: Level1Prototype
 --- !u!4 &450063405
 Transform:
