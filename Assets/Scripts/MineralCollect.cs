@@ -36,7 +36,6 @@ public class MineralCollect : MonoBehaviour
     {
         gameObject.GetComponent<BoxCollider>().enabled = false;
         gameObject.GetComponent<MeshRenderer>().enabled = false;
-        collectSFX.Play();
         Destroy(gameObject, 1f);
     }
 }
