@@ -29,9 +29,4 @@ public class ScoreManager : MonoBehaviour
         Score += scoreVal;
 
     }
-
-    public void updateUI()
-    {
-
-    }
 }
