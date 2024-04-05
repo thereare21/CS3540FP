@@ -68,26 +68,30 @@ public class TurretBehavior : MonoBehaviour
         Vector3 playerDirection = player.transform.position - turretTip.transform.position;
         RaycastHit hit;
         //Debug.DrawRay(turretTip.transform.position, playerDirection, Color.green, range);
-        if (Physics.Raycast(turretTip.transform.position, playerDirection, out hit, range))
+        if (Physics.Raycast(turretTip.transform.position, playerDirection, out hit, range) && hit.collider.CompareTag("Player"))
         {
+
+            playerIsInRange = true;
+            lockedTime += Time.deltaTime;
+
             //print("Hit something with tag " + hit.collider.tag);
-            if (hit.collider.CompareTag("Player"))
-            {
-                playerIsInRange = true;
-                if (Physics.Raycast(turretTip.transform.position, transform.forward, out hit, range))
-                {
-                    if (hit.collider.CompareTag("Player"))
-                    {
-                        lockedTime += Time.deltaTime;
-                    }
-                }
-            }
+            //if (hit.collider.CompareTag("Player"))
+            //{
+                
+            //    //if (Physics.Raycast(turretTip.transform.position, transform.forward, out hit, range))
+            //    //{
+            //    //    if (hit.collider.CompareTag("Player"))
+            //    //    {
+            //    //        
+            //    //    }
+            //    //}
+            //}
 
-            else
-            {
-                playerIsInRange = false;
+            //else
+            //{
+            //    playerIsInRange = false;
 
-            }
+            //}
         }
         else
         {
