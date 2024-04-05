@@ -6,7 +6,9 @@ TagManager:
   tags:
   - Turret
   - TurretTip
-  - Minerals
+  - Mineral
+  - ScoreManager
+  - Canvas
   layers:
   - Default
   - TransparentFX
