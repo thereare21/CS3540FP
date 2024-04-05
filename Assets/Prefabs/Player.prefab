@@ -5096,7 +5096,7 @@ MonoBehaviour:
   footStepSFX:
   - {fileID: 8300000, guid: 4bad8ab22a40e46a78ee833a9c823f28, type: 3}
   - {fileID: 8300000, guid: 2f2934a5aaa8b488091f41bde00b3dd7, type: 3}
-  superJumpSFX: {fileID: 0}
+  superJumpSFX: {fileID: 8300000, guid: 6b6e18ff8a2324a3086d72284281669c, type: 3}
   footstepDelay: 0.75
   standHeight: 2
   crouchHeight: 1
@@ -5119,3 +5119,4 @@ MonoBehaviour:
   disableDistance: 3
   firingSFX: {fileID: 8300000, guid: 5377e6a091a2d477cb22d8bce22c73cc, type: 3}
   turret: {fileID: 3864434632688398175, guid: e770950ac8ff9462ca2e91812db83f67, type: 3}
+  distract: {fileID: 0}
