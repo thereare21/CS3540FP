@@ -9,6 +9,7 @@ TagManager:
   - Mineral
   - ScoreManager
   - Canvas
+  - Projectile
   layers:
   - Default
   - TransparentFX
