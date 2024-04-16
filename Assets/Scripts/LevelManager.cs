@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    public Text gameText;
+    public TextMeshProUGUI gameText;
     public static bool isGameOver;
     public string nextLevel;
     public string currentLevel;
