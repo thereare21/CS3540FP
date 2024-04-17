@@ -16,6 +16,10 @@ public class MenuScript : MonoBehaviour
     public GameObject startPanel;
     public GameObject currentPanel;
 
+    public GameObject exitButton;
+
+    public static float mouseSensitivity;
+
     
     // Start is called before the first frame update
     void Start()
@@ -44,17 +48,26 @@ public class MenuScript : MonoBehaviour
         currentPanel.SetActive(false);
         newPanel.SetActive(true);
         currentPanel = newPanel;
+        exitButton.SetActive(true);
     }
 
-    public void ShowCredits()
+    public void GoToMenu()
     {
-        //show panel for credits, hide other panel
+        ShowPanel(startPanel);
+        exitButton.SetActive(false);
     }
 
-    public void ShowMenu()
+    public void ExitGame()
     {
-        //show main menu
+        Application.Quit();
     }
+
+    public void SetMouseSensitivity(float value)
+    {
+        mouseSensitivity = value;
+    }
+
+    
 
     public static void updateSceneIndex()
     {
