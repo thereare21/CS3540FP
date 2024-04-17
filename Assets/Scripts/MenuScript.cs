@@ -22,12 +22,16 @@ public class MenuScript : MonoBehaviour
 
     public static float mouseSensitivity;
 
-    
+    private void Awake()
+    {
+        timePlayed = 0f;
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
         Object.DontDestroyOnLoad(transform.gameObject);
-        timePlayed = 0f;
         currentLevel = 1;
         currentPanel = startPanel;
         
@@ -37,7 +41,7 @@ public class MenuScript : MonoBehaviour
     void Update()
     {
         timePlayed += Time.deltaTime;
-        timePlayedText.text = "Time Played: " + (int)timePlayed;
+        timePlayedText.text = "Time Played: " + (int)Time.realtimeSinceStartup;
 
         Debug.Log(Cursor.lockState);
     }

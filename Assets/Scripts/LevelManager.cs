@@ -32,9 +32,10 @@ public class LevelManager : MonoBehaviour
         gameText.text = "YOU WIN!";
         gameText.gameObject.SetActive(true);
  
-        if (!String.Equals(currentLevel, "Level2Prototype")) {
+        if (!String.Equals(currentLevel, "Level3Prototype")) {
             Invoke("LoadNextLevel", 2);
             isGameOver = false;
+            MenuScript.currentLevel++;
         }
         
 
