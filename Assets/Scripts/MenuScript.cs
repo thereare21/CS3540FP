@@ -30,6 +30,7 @@ public class MenuScript : MonoBehaviour
         timePlayed = 0f;
         currentLevel = 1;
         currentPanel = startPanel;
+        
     }
 
     // Update is called once per frame
@@ -37,6 +38,8 @@ public class MenuScript : MonoBehaviour
     {
         timePlayed += Time.deltaTime;
         timePlayedText.text = "Time Played: " + (int)timePlayed;
+
+        Debug.Log(Cursor.lockState);
     }
 
     public static void LoadNextSceneFromStart()
