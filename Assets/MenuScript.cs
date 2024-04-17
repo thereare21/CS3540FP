@@ -18,6 +18,8 @@ public class MenuScript : MonoBehaviour
 
     public GameObject exitButton;
 
+    public TMPro.TextMeshProUGUI timePlayedText;
+
     public static float mouseSensitivity;
 
     
@@ -34,6 +36,7 @@ public class MenuScript : MonoBehaviour
     void Update()
     {
         timePlayed += Time.deltaTime;
+        timePlayedText.text = "Time Played: " + (int)timePlayed;
     }
 
     public static void LoadNextSceneFromStart()
